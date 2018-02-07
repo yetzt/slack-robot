@@ -88,11 +88,7 @@ function parseTextMessage(dataStore, bot, textMessage) {
         }
 
       default:
-        link = link.replace('/^mailto:/', '');
-        if ((label) && (link.indexOf(label) === -1)) {
-          return `${label}(${link})`;
-        }
-        return link.replace(/https?:\/\//, '');
+        return link;
     }
   });
   text = text.split(' ').filter(x => x !== '').join(' ');
